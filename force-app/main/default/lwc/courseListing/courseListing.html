@@ -1,0 +1,39 @@
+<template>
+    <div class="tabs">
+        <template for:each={tabList} for:item="tab">
+            <button key={tab.name} data-domain={tab.name} 
+                    onclick={handleTabClick} 
+                    class={tab.class}>
+                    <p lwc:if={tab.name}>{tab.name}</p>
+                    <p lwc:else>All</p>
+                
+            </button>
+        </template>
+    </div>
+
+    <div class="course-list">
+        <template for:each={filteredCourses} for:item="course">
+            <div key={course.Id} class="course-card" data-id={course.Id} onclick={handleCourseClick}>
+                <h3>{course.Name}</h3>
+                <p>Price: ₹{course.Price__c}</p>
+                <p>Duration: {course.Duration__c} hours</p>
+                <template if:true={course.Professional__c}>
+                    <span class="tag">Professional ✓</span>
+                </template>
+            </div>
+        </template>
+    </div>
+
+    <template if:true={showModal}>
+        <div class="modal">
+            <div class="modal-content">
+                <h2>{selectedCourse.Name}</h2>
+                <p>{selectedCourse.Description__c}</p>
+                <p>Price: ₹{selectedCourse.Price__c}</p>
+                <p>Duration: {selectedCourse.Duration__c} hours</p>
+                <button onclick={closeModal}>Close</button>
+                <button class="buy">Buy Course</button>
+            </div>
+        </div>
+    </template>
+</template>
