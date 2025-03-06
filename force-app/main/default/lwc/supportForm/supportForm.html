@@ -1,0 +1,59 @@
+<template>
+    <div class="form-container">
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DQy00000MxCi1" method="POST">
+            <input type="hidden" name="orgid" value="00DQy00000MxCi1">
+            <input type="hidden" name="retURL" value="https://playful-bear-t9jsdx-dev-ed.trailblaze.my.site.com/BetaTechEd/course">
+
+            <div class="form-group">
+                <label for="name">Contact Name</label>
+                <input id="name" maxlength="80" name="name" size="20" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" maxlength="80" name="email" size="20" type="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input id="phone" maxlength="10" name="phone" size="20" type="text" pattern="\d{10}" title="Enter a 10-digit phone number" required />
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input id="subject" maxlength="80" name="subject" size="20" type="text" required />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Type</label>
+                <select id="type" name="type">
+                    <option value="">--None--</option>
+                    <option value="General">General</option>
+                    <option value="Technical">Technical</option>
+                    <option value="Examinations">Examinations</option>
+                    <option value="Library">Library</option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Finance & Fees">Finance & Fees</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="product">Course</label>
+                <select id="product" name="00NQy00000OkRZ0" title="Product">
+                    <template for:each={products} for:item="prod">
+                        <option key={prod.value} value={prod.value}>{prod.label}</option>
+                    </template>
+                </select>
+            </div>
+
+            <input type="hidden" id="external" name="external" value="1" />
+            <button type="submit" name="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</template>

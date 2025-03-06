@@ -52,7 +52,7 @@ export default class EnrollmentForm extends LightningElement {
         fields[EMAIL.fieldApiName] = this.email;
         fields[PHONE.fieldApiName] = this.phone;
         fields[COURSE_FIELD.fieldApiName] = this.selectedCourse;
-        fields[COMPANY.fieldApiName] = "Self"; 
+        fields[COMPANY.fieldApiName] = this.firstName + ' ' + this.lastName;; 
 
         // console.log(this.selectedCourse);
         

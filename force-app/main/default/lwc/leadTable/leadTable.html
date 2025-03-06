@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Enrollment Leads">
+        <lightning-datatable
+            key-field="Id"
+            data={leads}
+            columns={columns}
+            hide-checkbox-column
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
