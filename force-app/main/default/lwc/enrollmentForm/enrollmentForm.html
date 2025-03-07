@@ -1,18 +1,40 @@
 <template>
     <lightning-card>
-        <p slot="title" class="">START YOUR LEARNING</p>
+        <p slot="title" class="slds-text-heading_medium slds-text-align_center slds-text-color_brand">START YOUR
+            LEARNING</p>
         <div class="slds-p-around_medium">
-            <lightning-input label="First Name" value={firstName} onchange={handleInputChange} data-field="firstName" required></lightning-input>
-            <lightning-input label="Last Name" value={lastName} onchange={handleInputChange} data-field="lastName" required></lightning-input>
-            <lightning-input label="Email" value={email} onchange={handleInputChange} data-field="email" type="email" required></lightning-input>
-            <lightning-input label="Phone" value={phone} onchange={handleInputChange} data-field="phone" type="tel"></lightning-input>
-            <lightning-combobox label="Select Course"
-                value={selectedCourse}
-                options={courseOptions}
-                onchange={handleCourseChange}
-                required>
-            </lightning-combobox>
-            <lightning-button label="Submit" variant="brand" onclick={handleSubmit} class="slds-m-top_medium"></lightning-button>
+            <div class="slds-grid slds-gutters slds-wrap">
+                <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                    <lightning-input label="First Name" value={firstName} onchange={handleInputChange}
+                        data-field="firstName" required>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                    <lightning-input label="Last Name" value={lastName} onchange={handleInputChange}
+                        data-field="lastName" required>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                    <lightning-input label="Email" value={email} onchange={handleInputChange} data-field="email"
+                        type="email" required>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-bottom_medium">
+                    <lightning-input label="Phone" value={phone} onchange={handleInputChange} data-field="phone"
+                        type="tel">
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-bottom_medium">
+                    <lightning-combobox label="Select Course" value={selectedCourse} options={courseOptions}
+                        onchange={handleCourseChange} required>
+                    </lightning-combobox>
+                </div>
+            </div>
+            <div class="slds-text-align_center">
+                <lightning-button label="Enroll Now" variant="brand" onclick={handleSubmit}
+                    class="slds-m-top_medium slds-button_stretch">
+                </lightning-button>
+            </div>
         </div>
     </lightning-card>
 </template>

@@ -25,15 +25,29 @@
     </div>
 
     <template if:true={showModal}>
-        <div class="modal">
+        <div class="modal-backdrop">
             <div class="modal-content">
-                <img src={selectedCourse.Picture__c} alt="Course Image" class="modal-image"/>
-                <h2>{selectedCourse.Name}</h2>
-                <p>{selectedCourse.Description__c}</p>
-                <p>Price: ₹{selectedCourse.Price__c}</p>
-                <p>Duration: {selectedCourse.Duration__c} hours</p>
-                <button onclick={closeModal}>Close</button>
-                <button class="buy">Buy Course</button>
+                <button class="close-button" onclick={closeModal}>&times;</button>
+                <div class="modal-grid">
+                    <div class="modal-image-container">
+                        <img src={selectedCourse.Picture__c} alt="Course Image" class="modal-image"/>
+                    </div>
+                    <div class="modal-details">
+                        <h2>{selectedCourse.Name}</h2>
+                        <p class="description">{selectedCourse.Description__c}</p>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <span class="label">Price</span>
+                                <span class="value">₹{selectedCourse.Price__c}</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Duration</span>
+                                <span class="value">{selectedCourse.Duration__c} hours</span>
+                            </div>
+                        </div>
+                        <button class="enroll-button" onclick={handleEnrollAndRedirect}>Enroll Now</button>
+                    </div>
+                </div>
             </div>
         </div>
     </template>

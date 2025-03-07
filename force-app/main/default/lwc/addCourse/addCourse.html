@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Add New Course">
+        <div class="slds-p-around_medium">
+            <lightning-input type="text" label="Course Name" value={name} onchange={handleChange} data-field="name" required></lightning-input>
+
+            <lightning-input type="number" label="Price" value={price} onchange={handleChange} data-field="price" required></lightning-input>
+
+            <lightning-input type="number" label="Duration (in hours)" value={duration} onchange={handleChange} data-field="duration" required></lightning-input>
+
+            <lightning-combobox
+                label="Domain"
+                options={domainOptions}
+                value={domain}
+                onchange={handleChange}
+                data-field="domain"
+                required>
+            </lightning-combobox>
+
+            <lightning-input type="checkbox" label="Professional Course" checked={professional} onchange={handleChange} data-field="professional"></lightning-input>
+
+            <lightning-textarea label="Description" value={description} onchange={handleChange} data-field="description"></lightning-textarea>
+
+            <lightning-input 
+                type="url" 
+                label="Picture URL" 
+                data-field="pictureUrl"
+                value={pictureUrl}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <template if:true={pictureUrl}>
+                <p>Uploaded Image:</p>
+                <img src={pictureUrl} alt="Course Image" class="preview-image"/>
+            </template>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Add Course" variant="brand" onclick={handleSubmit}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

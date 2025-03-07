@@ -1,0 +1,23 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    display: flex;
+    align-items: center;
+}
+lightning-icon {
+    margin-right: 8px;
+}
+
+.course-item {
+    background: #ffffff;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.course-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
